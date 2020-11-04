@@ -1,0 +1,24 @@
+{
+  "name": "ruletav2",
+  "version": "1.0.0",
+  "description": "el mejorprograma del mundo equisde",
+  "main": "index.js",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "express": "^4.15.2",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "hihi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/OwlFeedMe/Ruleta"
+  },
+  "keywords": [
+    "ruleta"
+  ],
+  "author": "FeedMe",
+  "license": "MIT"
+}
