@@ -41,7 +41,7 @@ function myFunction() {
 
 
 myFunction();
-var segs = 40;
+var segs = 45;
 setInterval(function () {
   segs -= 0.1;
   seg = '' + segs;
@@ -51,7 +51,7 @@ setInterval(function () {
 
 
 setInterval(function () {
-  segs = 40;
+  segs = 45;
 
   myFunction();
 }, 40000);
