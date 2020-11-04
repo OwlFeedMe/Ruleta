@@ -80,7 +80,8 @@ function girar(roll) {
     var off = Math.ceil(Math.random() * 35) * (Math.round(Math.random()) ? 1 : -1);
     var posD = posV + off;
     var posR = posD;
-
+    var dife= Math.abs(posx-posR);
+    var difeI= Math.abs(posx-posR)-1;
     function frame() {
         elem.innerText = '--';
         if (posx > posR) {
@@ -89,41 +90,17 @@ function girar(roll) {
                 elemb.style.backgroundPositionX = posT + off + "px";
                 elem.innerText = roll;
             } else {
-
-                if (Math.abs(posx - posR) > 1000) {
-                    posx -= 15;
+              
+                
+                    var vel= (20* (difeI)/dife)+0.1;
+                    console.log(posx, vel,Math.abs(posx-posR));
+                    posx-= vel;
+                    
+                    if(Math.abs(posx-posR)<0.1){
+                        posx=posR;
+                    }
                     elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 900) {
-                    posx -= 10;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 800) {
-                    posx -= 8;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 700) {
-                    posx -= 7;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 600) {
-                    posx -= 6;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 500) {
-                    posx -= 5;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 450) {
-                    posx -= 4;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 350) {
-                    posx -= 3;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 250) {
-                    posx -= 2;
-                    elemb.style.backgroundPositionX = posx + "px";
-                }  else if (Math.abs(posx - posR) > 150) {
-                    posx -= 1;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else {
-                    posx-=0.5;
-                    elemb.style.backgroundPositionX = posx + "px";
-                }
+                    difeI= Math.abs(posx-posR);
             }
         } else {
 
@@ -133,40 +110,16 @@ function girar(roll) {
                 elem.innerText = roll;
             } else {
 
-                if (Math.abs(posx - posR) > 1000) {
-                    posx += 15;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 900) {
-                    posx += 10;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 800) {
-                    posx += 8;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 700) {
-                    posx += 7;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 600) {
-                    posx += 6;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 500) {
-                    posx += 5;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 450) {
-                    posx += 4;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else if (Math.abs(posx - posR) > 350) {
-                    posx += 3;
-                    elemb.style.backgroundPositionX = posx + "px";
-                }  else if (Math.abs(posx - posR) > 250) {
-                    posx += 2;
-                    elemb.style.backgroundPositionX = posx + "px";
-                }  else if (Math.abs(posx - posR) > 150) {
-                    posx += 1;
-                    elemb.style.backgroundPositionX = posx + "px";
-                } else {
-                    posx+=0.5;
-                    elemb.style.backgroundPositionX = posx + "px";
+             
+                var vel= (20* (difeI)/dife)+0.1;
+                
+                console.log(posx,vel,Math.abs(posx-posR));
+                posx+= vel;
+                if(Math.abs(posx-posR)<0.1){
+                    posx=posR;
                 }
+                elemb.style.backgroundPositionX = posx + "px";
+                difeI= Math.abs(posx-posR);
             }
         }
 
