@@ -41,24 +41,24 @@ function myFunction() {
 
 
 myFunction();
-var segs = 45;
+var segs = 60;
 setInterval(function () {
   segs -= 0.1;
   seg = '' + segs;
-  //if (segs < 10) { console.log(seg.substr(0, 3)); } else { console.log(seg.substr(0, 4)); }
+  if (segs < 10) { console.log(seg.substr(0, 3)); } else { console.log(seg.substr(0, 4)); }
 
 }, 100);
 
 
 setInterval(function () {
-  segs = 45;
+  segs = 60;
 
   myFunction();
-}, 40000);
+}, 60000);
 
 io.on('connection', (socket) => {
 
-  console.log('te conectaste crack', socket.id);
+  //console.log('te conectaste crack', socket.id);
 
   io.sockets.emit('tiempo', segs);
 })
