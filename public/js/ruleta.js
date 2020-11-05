@@ -129,8 +129,7 @@ function girar(roll) {
     var posR = posD;
     var dife = Math.abs(posx - posR);
     var difeI = Math.abs(posx - posR) - 1;
-    var audio = new Audio('..\mp3\ring.mp3');
-    audio.muted=true;
+ 
     function frame() {
 
 
@@ -140,7 +139,7 @@ function girar(roll) {
                 clearInterval(id);
                 elemb.style.backgroundPositionX = posT + off + "px";
                 document.getElementById("progreso").innerText = '- ' + roll + ' -';
-                audio.play();
+
                 var html = '';
                 if (results.length < 5) {
 
@@ -201,7 +200,7 @@ function girar(roll) {
                 clearInterval(id);
                 elemb.style.backgroundPositionX = posT + off + "px";
                 document.getElementById("progreso").innerText = '- ' + roll + ' -';
-                audio.play();
+
                 var html = '';
                 if (results.length <5) {
 
